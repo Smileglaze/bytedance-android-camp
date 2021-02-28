@@ -1,2 +1,2 @@
 # bytedance-android-camp
-[SJTU × ByteDance course homework of the android camp 2021.](https://github.com/bytedance-android-camp-sjtu-2021/)
+SJTU × ByteDance course homework of the [android camp 2021.](https://github.com/bytedance-android-camp-sjtu-2021/)
