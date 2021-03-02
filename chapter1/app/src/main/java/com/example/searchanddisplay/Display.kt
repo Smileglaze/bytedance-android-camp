@@ -14,8 +14,9 @@ class Display : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_display)
-        var msg=intent.getStringExtra("msg")
+        // 这里指定了要获取的常量的名字，通过名字传递不同的消息
+        val msg=intent.getStringExtra("msg")
+        // 修改新活动的TextView，显示msg内容
         findViewById<TextView>(R.id.textDisplay).text =msg
-        //findViewById<ConstraintLayout>(R.id.constraintDisplay).accessibilityPaneTitle =msg
     }
 }
