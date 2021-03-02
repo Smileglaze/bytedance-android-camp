@@ -45,8 +45,7 @@ class ScrollingActivity : AppCompatActivity() {
 
             override fun onQueryTextChange(keyWord: String): Boolean {
                 // 当修改了输入时的操作，根据关键字过滤列表，让Adapter填入新列表
-                // 但这应该并不是最好的方式，常规的方式是在你修改了装进Adapter中的数据后，
-                // 使用myRecycler.adapter.notifyDataSetChanged()，适用于数据热更新的场景
+                // 如果只是更新部分数据，推荐使用notifyItemRangeChanged()或者notifyItemChanged()
                 val filterList = filter(keyWord)
                 myRecycler.adapter = MyAdapter(filterList)
                 return false
