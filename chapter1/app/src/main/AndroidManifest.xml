@@ -9,6 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.SearchAndDisplay">
+        <activity android:name=".Display"></activity>
         <activity
             android:name=".ScrollingActivity"
             android:label="@string/app_name"
