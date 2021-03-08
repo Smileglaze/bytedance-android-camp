@@ -47,15 +47,11 @@ public class Ch3Ex1Activity extends AppCompatActivity {
                 // 提示1：可以参考 https://airbnb.io/lottie/#/android?id=custom-animators
                 // 提示2：SeekBar 的文档可以把鼠标放在 OnProgressChanged 中间，并点击 F1 查看，
                 // 或者到官网查询 https://developer.android.google.cn/reference/android/widget/SeekBar.OnSeekBarChangeListener.html#onProgressChanged(android.widget.SeekBar,%20int,%20boolean
-                ValueAnimator animator = ValueAnimator.ofFloat(0f, 1f);
-//                animator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener(){
-//                    @Override
-//                    public void onAnimationUpdate(ValueAnimator valueAnimator) {
-//                        animationView.setProgress((float)progress/seekBar.getMax());
-//                    }
-//                });
+
+                // 每次progress改变的时候都会调用这个函数，所以只需要在这时候将新的progress对应的百分比传入即可
+                // progress默认是1-100的整数，用getMax()最理想
                 animationView.setProgress((float)progress/seekBar.getMax());
-                animator.start();
+
             }
 
             @Override

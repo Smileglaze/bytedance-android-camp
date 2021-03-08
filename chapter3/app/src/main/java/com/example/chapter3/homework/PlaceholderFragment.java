@@ -30,8 +30,6 @@ import java.util.List;
 
 public class PlaceholderFragment extends Fragment {
 
-    private PageViewModel pageViewModel;
-
     private LottieAnimationView animationView2;
     private RecyclerView myRecycler;
     private Context mContext;
@@ -62,13 +60,6 @@ public class PlaceholderFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        pageViewModel = new ViewModelProvider(this, new ViewModelProvider.NewInstanceFactory()).get(PageViewModel.class);
-        int index = 1;
-        if (getArguments() != null) {
-            index = getArguments().getInt(ARG_SECTION_NUMBER);
-        }
-        pageViewModel.setIndex(index);
-
         // 初始化数组
         for (int i = 1; i < 101; i++) {
             list.add(String.format("这里是第 %d 行", i));
@@ -78,6 +69,7 @@ public class PlaceholderFragment extends Fragment {
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
+        // 播放动画
         animationView2.playAnimation();
 
         // 展示 recycler view
@@ -86,15 +78,15 @@ public class PlaceholderFragment extends Fragment {
         myRecycler.setVisibility(View.GONE); //前5s并不显示不渲染
 
         ObjectAnimator fadeOutAnimator = ObjectAnimator.ofFloat(animationView2,
-                "alpha", 1f, 0f);
-        fadeOutAnimator.setDuration(1000);
+                "alpha", 1f, 0f);//淡出效果，alpha从1到0
+        fadeOutAnimator.setDuration(1000);// 淡出1s
 //        fadeOutAnimator.setRepeatCount(0); // 设置动画重复播放次数 = 重放次数+1
 
         ObjectAnimator fadeInAnimator = ObjectAnimator.ofFloat(myRecycler,
                 "alpha", 0f, 1f);
         fadeInAnimator.setDuration(1000);
 //        fadeInAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
-//           // 如果fadeInAnimator是ValueAnimator.ofInt(0,255) ，也可以使用这个
+//           // 如果fadeInAnimator = ValueAnimator.ofInt(0,255) ，也可以使用这个
 //            @Override
 //            public void onAnimationUpdate(ValueAnimator animation) {
 //                int curValue = (int)animation.getAnimatedValue();
@@ -103,6 +95,7 @@ public class PlaceholderFragment extends Fragment {
 //            }
 //        });
 
+        // 丢到一个动画集合里，一起运行
         final AnimatorSet fadeInOut = new AnimatorSet();
         fadeInOut.playTogether(fadeInAnimator,fadeOutAnimator);
 
@@ -116,8 +109,10 @@ public class PlaceholderFragment extends Fragment {
                 fadeInOut.start();
             }
         }, 5000);
-//        fadeInOut.setStartDelay(5000); //如果不需要等5s设置透明度，可以用这个delay
-//        fadeInOut.start();
+
+        //  如果不需要等5s设置透明度，可以用这个delay
+        //  fadeInOut.setStartDelay(5000);
+        //  fadeInOut.start();
 
     }
 

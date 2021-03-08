@@ -16,11 +16,11 @@
         android:id="@+id/rainbow"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:textSize="22sp"
-        android:visibility="invisible"
         android:layout_gravity="center_horizontal"
-        android:text="@string/rainbow_text" />
+        android:layout_marginTop="32dp"
+        android:text="@string/rainbow_text"
+        android:textSize="22sp"
+        android:visibility="visible" />
 
     <LinearLayout
         android:layout_width="match_parent"
