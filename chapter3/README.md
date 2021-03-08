@@ -1,6 +1,6 @@
 # Chapter3 APP
 
-> 效果图和详细说明见我的博客[Java安卓开发入门-TabLayout、Fragment和属性动画](https://www.cnblogs.com/smileglaze/p/14501545.html)（3月6日发布）
+> 效果图和详细说明见我的博客[Java安卓开发入门-TabLayout、Fragment和属性动画](https://www.cnblogs.com/smileglaze/p/14501545.html)
 
 * 使用`Java`编写
 * 主要有那些功能？
