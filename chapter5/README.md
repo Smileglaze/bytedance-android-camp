@@ -19,6 +19,6 @@
 
 写入body格式参考
 
-![Alt text]([files/1.jpg](https://img-ask.csdn.net/upload/201805/09/1525863351_886440.png))
+![Alt text](https://img-ask.csdn.net/upload/201805/09/1525863351_886440.png)
 
 By [Yiwei Yang](https://github.com/Smileglaze).
