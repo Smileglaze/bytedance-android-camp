@@ -7,7 +7,7 @@
 	* 3：通过`HttpUrlConnection`⽅式实现留⾔提交
 	* 4：⽤Socket的⽅式实现简单Head请求
 	* 5：上传页预置默认封面图
-* [接口参考](files/About Interface.pdf)
+* [接口参考](https://github.com/Smileglaze/bytedance-android-camp/blob/main/chapter5/files/About%20Interface.pdf)
 
 
 效果图
